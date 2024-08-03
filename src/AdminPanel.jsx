@@ -6,14 +6,14 @@ export default function AdminPanel() {
     const [newh1, setNewh1]=useState("");
 
     useEffect(()=>{
-        axios.get("http://localhost:5000/geth1").then(res=>{
+        axios.get("https://fastvert-server.vercel.app/geth1").then(res=>{
             seth1Text(res.data);
         });
     },[]);
 
     const handleSubmit=(e)=>{
         e.preventDefault(); 
-        axios.post("http://localhost:5000/posth1", {text:newh1}).then(res=>{
+        axios.post("https://fastvert-server.vercel.app/posth1", {text:newh1}).then(res=>{
             seth1Text(res.data);
             setNewh1('');
         });
